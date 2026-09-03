@@ -165,9 +165,18 @@ if run_button:
                 st.metric("Enumerators", stats["enumerators_count"])
             with col2:
                 st.write("**Surveys per enumerator**")
-                st.write(stats["surveys_per_enumerator"])
-            st.write("**Average values (numeric columns)**")
-            st.write(stats["numeric_column_averages"])
+                surveys_per_enum_df=pd.DataFrame(
+                    list(stats["surveys_per_enumerator"].items()),
+                    columns=["Enumerator","Surveys"]
+                )
+                st.dataframe(surveys_per_enum_df,use_container_width=True,
+                             hide_index=True)
+                st.write("**Avergae values (numeric columns)**")
+                avg_df=pd.DataFrame(
+                    list(stats["numeric_column_averages"].items()),
+                    columns=["Column","Average"]
+                )
+                st.dataframe(avg_df,ue_container_widith=True,hide_index=True)         
 else:
     st.info("Choose your data and checks in the sidebar, then click "
             "**Run Quality Checks**.")
