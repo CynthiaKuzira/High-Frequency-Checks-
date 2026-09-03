@@ -57,10 +57,9 @@ from hfc_1 import (
 # --- Page setup ------------------------------------------------------------
 st.set_page_config(page_title="HFC Quality Engine", layout="wide")
 
-st.title("📋 High-Frequency Check (HFC) & Data Quality Engine")
+st.title("📋 High-Frequency Check (HFC)")
 st.markdown(
-    "An OOP-based tool demonstrating **Abstraction, Inheritance, "
-    "Polymorphism, and Encapsulation** applied to survey data quality checks."
+    "A High Frequncy Check OOP applied to survey data quality checks."
 )
 
 # --- Sidebar: choose data source --------------------------------------------
@@ -108,7 +107,7 @@ if raw_df is not None:
 
 # --- Show a preview of the data (PII-safe, via the anonymized getter) --------
 if survey_data is not None:
-    with st.expander("Preview data (before checks) - PII removed"):
+    with st.expander("Preview data"):
         st.dataframe(survey_data.get_anonymized_data(), use_container_width=True)
 
 # --- Run the checks when the button is clicked -------------------------------
