@@ -156,7 +156,7 @@ if run_button:
             # (Note: the anonymized row-level data is already shown in the
             # preview above, before checks run - no need to repeat it here.)
             st.subheader("📈 Summary Statistics")
-            st.caption("Aggregated only - no individual survey rows shown here.")
+            st.caption("")
             stats = survey_data.get_summary_stats()
             col1, col2 = st.columns(2)
             with col1:
