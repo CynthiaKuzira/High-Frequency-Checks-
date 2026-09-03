@@ -176,7 +176,7 @@ if run_button:
                     list(stats["numeric_column_averages"].items()),
                     columns=["Column","Average"]
                 )
-                st.dataframe(avg_df,use_container_widith=True,hide_index=True)         
+                st.dataframe(avg_df,use_container_width=True,hide_index=True)         
 else:
     st.info("Choose your data and checks in the sidebar, then click "
             "**Run Quality Checks**.")
