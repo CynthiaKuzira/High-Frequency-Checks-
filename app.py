@@ -102,7 +102,8 @@ else:
 # than cosmetic.
 survey_data = None
 if raw_df is not None:
-    pii_cols = ["respondent_name"] if "respondent_name" in raw_df.columns else []
+    possible_pii = ["respondent_name", "phone_number"]
+    pii_cols = [col for col in possible_pii if col in raw_df.columns]
     survey_data = SurveyData(raw_dataframe=raw_df, pii_columns=pii_cols)
 
 # --- Show a preview of the data (PII-safe, via the anonymized getter) --------
